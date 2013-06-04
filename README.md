@@ -1,11 +1,10 @@
 custom-post-types-to-csv 
 ========================
 
-###  - Wordpress plugin
-
+#### Wordpress plugin
 Custom Post Types to CSV - A lightweight Wordpress plugin that allows you to easily export posts from your custom post types.
 
-### Install
+#### Install
 
 * Put the "custom-post-types-to-csv" folder in your plugins directory.
 * Active in the Wordpress admin
