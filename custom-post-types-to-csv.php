@@ -13,11 +13,18 @@
 add_action('admin_menu' , 'CustomPostTypesToCSV::renderButton');
 
 Class CustomPostTypesToCSV {
-   
+
+
+  /**
+  * Get a combination of custom posts and its post meta data
+  * @return array
+  */
  public static function getPosts() {
    global $wpdb;
+   
    $post_type = array_key_exists('post_type', $_GET) ? $_GET['post_type'] : null;
    if(is_null($post_type)) { return false; exit; }
+   
    $post_results = $wpdb->get_results("
       SELECT * FROM wp_posts 
       WHERE post_type = '" . $post_type ."' 
@@ -42,10 +49,13 @@ Class CustomPostTypesToCSV {
       }
       $combined[] = $post;
     }
-    self::getCSV($combined);
+    return $combined;
   }
   
-  
+  /**
+  * Sends headers to download a CSV file
+  * @param array $content
+  */
   public static function getCSV($content) {
     $fp = tmpfile();
     foreach ($content as $fields) {
@@ -61,10 +71,11 @@ Class CustomPostTypesToCSV {
     header("Content-Disposition:attachment;filename=file.csv");
     fpassthru($fp);
     fclose($fp); 
-
   }
   
- 
+  /**
+  * Tells Wordpress to render a button under each post type
+  */
   public static function renderButton() {
     $post_type = array_key_exists('post_type', $_GET) ? $_GET['post_type'] : null;
     if(is_null($post_type)) return;

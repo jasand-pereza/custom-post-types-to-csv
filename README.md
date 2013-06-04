@@ -21,6 +21,8 @@ $install_dir = realpath(dirname(__FILE__) . '/../../../../wordpress') . '/'; // 
 chdir($install_dir);
 include('wp-load.php');
 
-PostsToCSV::getPosts(); 
+$posts = CustomPostTypesToCSV::getPosts(); 
+CustomPostTypesToCSV::getCSV($posts);
+
 
 ```
