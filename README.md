@@ -7,10 +7,10 @@ Custom Post Types to CSV - A lightweight Wordpress plugin that allows you to eas
 #### Install
 
 * Put the "custom-post-types-to-csv" folder in your plugins directory.
-* Active in the Wordpress admin
+* Activate in the Wordpress admin.
 
 #### Path changes
-You may need to change the relative path of $install_dir in download.php to match your installations root directory.
+You may need to change the relative path of the $install_dir in download.php to match your installations root directory.
 
 ```PHP
 <?php
