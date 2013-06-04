@@ -1,7 +1,8 @@
 <?php 
+
 /*
  * Plugin Name: Custom Post Types to CSV
- * Plugin URI : http://www.jasandpereza.com/plugins/custom-post-types-to-csv
+ * Plugin URI : https://github.com/jasand-pereza/custom-post-types-to-csv
  * Description: Export posts to a CSV file.
  * Version 1.0
  * Author: Jasand Pereza
